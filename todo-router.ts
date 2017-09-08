@@ -6,8 +6,7 @@ const todo = new ToDo();
 export const router = express.Router();
 
 router.get("/", (req, res) => 
-    res.json(todo.lister()
-
+    res.json(todo.lister();
 ));
 
 router.post("/", (req, res) => {
