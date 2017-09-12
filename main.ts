@@ -5,6 +5,7 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import {router} from './todo-router';
 import {userRouter} from './user-router';
+import * as cors from 'cors';
 const app:express.Express = express();
 
 
@@ -35,7 +36,7 @@ if (u.name != "titi" || u.password != "titi") {
     console.error("expect user titi got" + u.name);
     process.exit(1);
 }
-
+app.use(cors());
 app.use("/todo", bodyParser.json());
 app.use("/todo", bodyParser.urlencoded({
     extended:true
